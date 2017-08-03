@@ -6,7 +6,7 @@ class FullyConnect:
     #l_x: input length l_y: output length
     def __init__(self, l_x, l_y) :
         self.weights = np.random.randn(l_y, l_x) # random init
-        self.bias = np.random.randn(1)
+        self.bias = np.random.randn(2, 1)
 
     def forward(self, x):
         self.x = x
@@ -38,7 +38,7 @@ class Sigmoid:
         return self.dx
 
 def main():
-    fc = FullyConnect(2, 1)
+    fc = FullyConnect(2, 2)
     sigmoid = Sigmoid()
     x = np.array([[1], [2]])
 
